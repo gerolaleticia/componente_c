@@ -1,4 +1,4 @@
-# Wave Prediction
+# Microserviço: API Wave Prediction
 
 Este projeto faz parte da entrega da sprint 3 do curso de pós graduação em **Engenharia de Software - PUC Rio** 
 
