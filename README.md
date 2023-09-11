@@ -28,13 +28,13 @@ Este comando instala as dependências/bibliotecas, descritas no arquivo requirem
 Para executar a API basta executar:
 
 ```
-(env)$ flask run --host 0.0.0.0 --port 5000
+(env)$ flask run --host 0.0.0.0 --port 5002
 ```
 
 Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor automaticamente após uma mudança no código fonte.
 
 ```
-(env)$ flask run --host 0.0.0.0 --port 5000 --reload
+(env)$ flask run --host 0.0.0.0 --port 5002 --reload
 ```
 
 ## Acesso no browser

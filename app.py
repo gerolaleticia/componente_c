@@ -134,3 +134,38 @@ def del_previsao(query: PrevisaoBuscaSchema):
         error_msg = "Previsao não encontrada na base :/"
         logger.warning(f"Erro ao deletar previsao #'{previsao_nome}', {error_msg}")
         return {"mesage": error_msg}, 404
+
+@app.put('/previsao', tags=[previsao_tag],
+          responses={"200": PrevisaoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+def add_revisao_put(form: PrevisaoSchema):
+    """Adiciona uma nova Previsão à base de dados
+
+    Retorna uma representação das previsões e comentários associados.
+    """
+    previsao = Previsao(
+        nome_praia=form.nome_praia,
+        ondulacao=form.ondulacao,
+        vento=form.vento,
+        tamanho_onda=form.tamanho_onda)
+    logger.debug(f"Adicionando a previsão do local: '{previsao.nome_praia}'")
+    try:
+        # criando conexão com a base
+        session = Session()
+        # adicionando previsao
+        session.add(previsao)
+        # efetivando o camando de adição de novo registro na tabela
+        session.commit()
+        logger.debug(f"Adicionada previsão do local: '{previsao.nome_praia}'")
+        return apresenta_previsao(previsao), 200
+
+    except IntegrityError as e:
+        # como a duplicidade do nome é a provável razão do IntegrityError
+        error_msg = "Previsão para este local já adicionada :/"
+        logger.warning(f"Erro ao adicionar previsão '{previsao.nome_praia}', {error_msg}")
+        return {"mesage": error_msg}, 409
+
+    except Exception as e:
+        # caso um erro fora do previsto
+        error_msg = "Não foi possível salvar novo registro :/"
+        logger.warning(f"Erro ao adicionar previsao '{previsao.nome_praia}', {error_msg}")
+        return {"mesage": error_msg}, 400
