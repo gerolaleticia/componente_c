@@ -1,5 +1,9 @@
 # Microserviço: API Wave Prediction
 
+<p float="left">
+
+ <img src="https://user-images.githubusercontent.com/59067501/267109015-98556724-6c57-4212-9d5f-36a9a0b20426.jpg" width="600" />
+
 Este projeto faz parte da entrega da sprint 3 do curso de pós graduação em **Engenharia de Software - PUC Rio** 
 
 O objetivo da aplicação é trazer, em uma única tela interativa, as previsões de ondas do litoral paulista considerando direção da ondulação, direção do vento, tamanho de onda esperado (rotas inputadas por esta API).
