@@ -2,7 +2,7 @@
 
 Este projeto faz parte da entrega da sprint 3 do curso de pós graduação em **Engenharia de Software - PUC Rio** 
 
-O objetivo da aplicação é trazer, em uma única tela interativa, as previsões de ondas do litoral paulista considerando direção da ondulação, direção do vento, tamanho de onda esperado (rotas inputadas por esta API) e uma sugestão de traje de banho considerando a temperatura prevista (inputadas por API externa, checar documentação do componente A). 
+O objetivo da aplicação é trazer, em uma única tela interativa, as previsões de ondas do litoral paulista considerando direção da ondulação, direção do vento, tamanho de onda esperado (rotas inputadas por esta API).
 
 O objetivo principal é facilitar a organização e programação dos surfistas da cidade. 
 
